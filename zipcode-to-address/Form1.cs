@@ -20,26 +20,8 @@ namespace zipcode_to_address
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string text = textBox3.Text;
-            if (text != "")
-            {
-                Clipboard.SetData(DataFormats.Text, text);
-                MessageBox.Show("住所をクリップボードにコピーしました");
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //ボタン1を押したら、郵便番号を読み込み、返答をテキストボックスに表示
         private void button1_Click(object sender, EventArgs e)
         {
             string zpcd = textBox1.Text;
@@ -58,10 +40,9 @@ namespace zipcode_to_address
             var adrs = Newtonsoft.Json.JsonConvert.DeserializeObject<Rootobject>(responsejson);
 
             //表示と例外処理
-            if ( adrs.message != null )
+            if (adrs.message != null)
             {
                 MessageBox.Show("郵便番号が正しくありません");
-
             }
             else
             {
@@ -69,11 +50,20 @@ namespace zipcode_to_address
                 textBox3.Text = adrs.results[0].address1 + adrs.results[0].address2 + adrs.results[0].address3;
             }
 
-
-
         }
 
+        //ボタン2を押したら、住所をクリップボードにコピー
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string text = textBox3.Text;
+            if (text != "")
+            {
+                Clipboard.SetData(DataFormats.Text, text);
+                MessageBox.Show("住所をクリップボードにコピーしました");
+            }
+        }
 
+               
         //API返答のクラスを準備
         public class Rootobject
         {
@@ -92,6 +82,19 @@ namespace zipcode_to_address
             public string kana3 { get; set; }
             public string prefcode { get; set; }
             public string zipcode { get; set; }
+        }
+
+
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

@@ -99,7 +99,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(14, 149);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(309, 19);
+            this.textBox3.Size = new System.Drawing.Size(270, 19);
             this.textBox3.TabIndex = 6;
             this.textBox3.Text = "住所";
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
