@@ -75,6 +75,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "住所に変換";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
@@ -83,6 +84,7 @@
             this.textBox2.Size = new System.Drawing.Size(100, 19);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "郵便番号";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -97,9 +99,10 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(14, 149);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 19);
+            this.textBox3.Size = new System.Drawing.Size(309, 19);
             this.textBox3.TabIndex = 6;
             this.textBox3.Text = "住所";
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
