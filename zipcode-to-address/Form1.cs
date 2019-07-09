@@ -44,6 +44,10 @@ namespace zipcode_to_address
             {
                 MessageBox.Show("郵便番号が正しくありません");
             }
+            else if (adrs.results == null)
+            {
+                MessageBox.Show("郵便番号が正しくありません");
+            }
             else
             {
                 textBox2.Text = adrs.results[0].zipcode;
